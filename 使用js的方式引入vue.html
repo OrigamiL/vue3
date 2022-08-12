@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue3.js"></script>
+</head>
+<body>
+<div id="myDiv">
+    <p>{{num}}</p>
+    <p>{{uname}}</p>
+</div>
+<script>
+    const Counter={
+        data:function () {
+            return{
+                num:0,
+                uname:"zhangSan"
+            }
+        }
+    }
+    let app = Vue.createApp(Counter).mount("#myDiv");
+    console.log(app)
+    /*修改app.num 页面上的num也会随之修改*/
+</script>
+
+</body>
+</html>
