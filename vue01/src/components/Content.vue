@@ -1,21 +1,23 @@
 <template>
   <div>
-    <div>
-      <slot></slot>
-    </div>
-    <h2>我是Content组建内容</h2>
-    <div>
-      <slot></slot><!--占位-->
-    </div>
+<!--    <HelloHello :message="message"></HelloHello>-->
+    <HelloHello :message="message"></HelloHello>
   </div>
 </template>
 
 <script>
+import HelloHello from "./HelloHello.vue";
 export default {
   name: "Content",
+  components: {HelloHello},
   data() {
     return {}
-  }
+  },
+/*  props:{
+    message:{
+      type:String,
+    }
+  }*/
 }
 </script>
 

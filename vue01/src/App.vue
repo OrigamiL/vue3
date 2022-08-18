@@ -1,20 +1,19 @@
 <template>
   <div>
-    <Content><h2>我这</h2>><button>按钮</button></Content><br><br>
-    <Content><input type="text"></Content>
+    <HomeView></HomeView>
   </div>
 </template>
 
 <script>
-import Content from "./components/Content.vue";
+import HomeView from "./components/HomeView.vue";
 export default {
   name: "App",
+  components: {HomeView},
   data() {
-    return {}
-  },
-  components: {
-    Content,
-  },
+    return {
+
+    }
+  }
 }
 </script>
 
