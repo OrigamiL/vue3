@@ -1,6 +1,7 @@
 <template>
   <div>
     <Content :message="message"></Content>
+    <button @click="message='???'">按钮</button>
   </div>
 </template>
 
