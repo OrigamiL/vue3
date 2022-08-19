@@ -1,17 +1,17 @@
 <template>
   <div>
-    <Content :message="message"></Content>
+    <HomeView></HomeView>
   </div>
 </template>
 
 <script>
-import Content from "./components/Content.vue";
+import HomeView from "./components/HomeView.vue";
 export default {
   name: "App",
-  components: {Content},
+  components: {HomeView},
   data() {
     return {
-      message:"HelloWorld",
+
     }
   }
 }

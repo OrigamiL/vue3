@@ -1,23 +1,26 @@
 <template>
   <div>
-<!--    <HelloHello :message="message"></HelloHello>-->
-    <HelloHello :message="message"></HelloHello>
+    <h2>{{message}}</h2>
   </div>
 </template>
 
 <script>
-import HelloHello from "./HelloHello.vue";
 export default {
   name: "Content",
-  components: {HelloHello},
   data() {
     return {}
   },
-/*  props:{
+  props:{
     message:{
       type:String,
+      default:"你好",
+      required:false,
     }
-  }*/
+  },
+  setup(props){
+    console.log(props)
+    console.log(props.message);
+  }
 }
 </script>
 

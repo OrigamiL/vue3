@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Hello from "./Hello.vue";
+import Hello from "./父子之间的通信propsHello.vue";
 export default {
   name: "Content",
   data() {

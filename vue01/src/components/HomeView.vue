@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Content from "./Content.vue";
+import Content from "./provide和inject.vue";
 export default {
   name: "HomeView",
   components: {Content},

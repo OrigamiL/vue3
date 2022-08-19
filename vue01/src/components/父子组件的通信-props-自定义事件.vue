@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Hello from "./Hello.vue";
+import Hello from "./父子之间的通信propsHello.vue";
 export default {
   name: "Content",
   data() {//定义为函数，返回对象，是为了让每一个组件对象都返回一个新的对象，不会造成数据污染
