@@ -12,12 +12,28 @@ import News from "../views/News.vue";
 import Parent from "../views/Parent.vue";
 import StyleOne from "../views/StyleOne.vue";
 import StyleTwo from "../views/StyleTwo.vue";
+import Page from "../views/Page.vue";
+import ShopTop from "../views/ShopTop.vue";
+import ShopMain from "../views/ShopMain.vue";
+import ShopFooter from "../views/ShopFooter.vue";
 
 //2.定义一些路由  路由映射表
 //每个路由都需要映射到一个组件
 //我们后面再讨论嵌套路由
 const routes = [
-    {path: '/', component: Home},
+    {
+        path: "/",
+        //重定向
+        //redirect:'/home',
+        //重命名路由
+        //redirect:{name:"home"}
+        //方法
+        redirect:(to)=>{
+            console.log(to)
+            return {}
+        }
+    },
+    {path: '/home', name:'home', component: Home},
     {path: '/about', component: About},
     //动态路由
     {path: '/user/:id', component: User},
@@ -30,6 +46,7 @@ const routes = [
         //参数可有可无，可多个
         //path: '/news/:id*',
         //参数0或者1个
+        name:"news",//命名路由  用在声明式和编程式皆可
         path:'/news/:id?',
         component: News
     },
@@ -50,7 +67,16 @@ const routes = [
     // {path: '/parent/styleOne',component: StyleOne},
     // {path: '/parent/styleTwo',component: StyleTwo},
     //使用正则表达式 匹配任意路径 捕获所有404
+    {path: '/page', component: Page},
+    {
+        path:'/shop',components:{
+            default:ShopMain,
+            ShopTop:ShopTop,
+            ShopFooter:ShopFooter,
+        }
+    },
     {path: '/:path(.*)', component: NotFound},
+
 
 ]
 //3.创建路由实例并传递`routes`配置

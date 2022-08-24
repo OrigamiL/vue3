@@ -1,6 +1,6 @@
 <script setup>
 import {provide, ref} from "vue";
-  const id = ref();
+  const id = ref(0);
   const list=ref([1,2,3,4]);
   provide('list',list);
 </script>
@@ -21,10 +21,18 @@ import {provide, ref} from "vue";
       <router-link :to="{path: '/user/'+id}">Go to User</router-link>
       <router-link :to="{path: '/news/'+id}">Go to News</router-link><br>
       <router-link to="/parent">Go to Parent</router-link>
+      <router-link to="/page">Go to Page</router-link>
+<!--    替换当前位置  -->
+      <router-link to="/page" replace>Go to PagePage</router-link>
+<!--    路由命名  -->
+      <router-link :to="{name:'news',params:{id:id}}">Go to News</router-link><br>
+      <router-link to="/shop">GotoShop</router-link>
     </p>
 <!--  路由出口 占位符 -->
 <!--  路由匹配到的组件将被渲染在这里  -->
+    <router-view name="ShopTop"></router-view>
     <router-view></router-view>
+    <router-view name="ShopFooter"></router-view>
   </div>
 </template>
 

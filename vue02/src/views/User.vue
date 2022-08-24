@@ -1,6 +1,10 @@
 <template>
   <div>
+<!--  获取参数  -->
+<!--  $router是VueRouter的一个实例，他包含了所有的路由，是用来操作路由的,push,forward,go方法
+      $route代表当前活跃的路由对象，是用来获取路由信息的  -->
     <h2>用户+{{$route.params.id}}</h2>
+    <h2>{{useRoute().params.id}}</h2>
   </div>
 </template>
 
