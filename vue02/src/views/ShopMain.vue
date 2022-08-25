@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>shop主要内容</h2>
+    <h2>shop主要内容==={{content}}</h2>
   </div>
 </template>
 
@@ -8,7 +8,13 @@
 export default {
   name: "ShopMain",
   data() {
-    return {}
+    return {
+
+    }
+  },
+  props:['content'],
+  updated() {
+    console.log(this.content);
   }
 }
 </script>

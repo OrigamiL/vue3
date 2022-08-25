@@ -14,7 +14,7 @@ import {provide, ref} from "vue";
 <!--    通过传递`to`来指定链接  -->
 <!--    `<router-link>` 将呈现一个带有正确`href`属性的 `<a>`标签 -->
 <!--    使用一个自定义组件 router-link来创建链接，这使得Vue Router可以在不重新加载页面的情况下更改URL，处理URL的生成以及编码  -->
-      <router-link to="/">Go to Home</router-link>
+      <router-link to="/home">Go to Home</router-link>
       <router-link to="/about">Go to About</router-link>
 <!--      <router-link to="/user/1234">Go to User</router-link>-->
       <input v-model="id">
