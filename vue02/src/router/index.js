@@ -4,7 +4,8 @@ import {createRouter, createWebHashHistory, createWebHistory} from "vue-router";
 //也可以从其他文件导入
 /*const Home = { template: '<div>Home</div>>' }
 const About = { template: '<div>About</div>'}*/
-import Home from "../views/Home.vue";
+//静态导入
+//import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import User from "../views/User.vue";
 import NotFound from "../views/NotFound.vue";
@@ -16,6 +17,8 @@ import Page from "../views/Page.vue";
 import ShopTop from "../views/ShopTop.vue";
 import ShopMain from "../views/ShopMain.vue";
 import ShopFooter from "../views/ShopFooter.vue";
+//路由懒加载  动态导入
+
 
 //2.定义一些路由  路由映射表
 //每个路由都需要映射到一个组件
@@ -40,7 +43,11 @@ const routes = [
 
         }
     },
-    {path: '/home', name:'home', component: Home},
+    {
+        path: '/home',
+        name:'home',
+        component: ()=> import("../views/Home.vue")
+    },
     {
         path: '/about',
         component: About,
@@ -48,7 +55,7 @@ const routes = [
         beforeEnter:(to,from,next)=>{
             console.log(to)
             console.log(from)
-            if (true){
+            if (1===1){
                 next();
             }
         }
