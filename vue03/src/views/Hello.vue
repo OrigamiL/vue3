@@ -20,7 +20,11 @@ fetch('http://localhost:5173/news').then((res)=>{//默认执行get请求
   bannersList = res.list
 })*/
 //axios:基于promise的http库
-axios.get('http://localhost:5173/news').then((res)=>{
+/*axios.get('/path/api/mmdb/movie/v3/list/hot.json?ct=%E6%BD%8D%E5%9D%8A&ci=224&channelId=4').then((res)=>{
+  //跨域请求数据失败，是因为浏览器有同源策略的保护机制，我们可以通过proxy实现跨域请求数据
+  console.log(res)
+})*///https://static-data.gaokao.cn/www/2.0/school/120/info.json
+axios.get('/path/www/2.0/school/120/info.json').then((res)=>{
   console.log(res)
 })
 
