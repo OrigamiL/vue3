@@ -2,6 +2,7 @@
   <div>
     <button @click="updateMsg">Content按钮</button>
   </div>
+
 </template>
 
 <script>

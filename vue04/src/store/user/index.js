@@ -1,4 +1,5 @@
 const user = {
+    namespaced:true,
     state:()=>({
         username:'张三',
     }),
