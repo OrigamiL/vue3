@@ -11,6 +11,14 @@ export default {
     msg:"你好",
     msg1:""
   }),
+  methods:{
+    getMsg(){
+      this.msg="hello";
+      this.$nextTick(()=>{
+        this.msg1=this.$refs.msg.innerHTML;
+      })
+    }
+  },
   provide:{
     store
   },
@@ -46,8 +54,10 @@ export default {
 <!--  局部注册  -->
     <input type="text">
     <input type="text" v-focus>
-    <h2>{{msg}}</h2>
-    <h2>{{msg1}}</h2>
+    <h2 ref="msg">{{msg}}</h2>
+    <h2 ref="msg1">{{msg1}}</h2>
+    <button @click="getMsg">按钮</button>
+    <hr>
     <Home/>
     <Content/>
     <Hello/>
